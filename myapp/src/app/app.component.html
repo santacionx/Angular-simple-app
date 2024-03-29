@@ -1,0 +1,13 @@
+<h1>hello{{getTitle()| titlecase}}</h1>
+<input (keyup)="changeImage($event)" [value]="imgurl">
+<app-post [posturl]="imgurl" (imgSelected)="logImg($event)">Images free pic</app-post>
+<button [ngClass]="{'red-button': isClicked}" (click)="toggleClicked()">Click me!</button>
+<h1 [ngStyle]="{'font-style': styleExp}">hi san how r u </h1>
+<button (click)="toggleFontStyle()">Toggle Font Style</button>
+
+<!-- <ng-template [ngIf]="isClicked">hi savitha this is ngtemplate stores in memory</ng-template> -->
+<h1 *ngIf="isClicked">hi savitha this is ngtemplate stores in memory</h1>
+
+<!-- image is array in component app -->
+<app-post *ngFor="let image of images; let i = index " [posturl]="image" (imgSelected)="logImg($event)">Images free
+  pic</app-post>
